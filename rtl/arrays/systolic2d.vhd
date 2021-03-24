@@ -140,9 +140,9 @@ begin
     -------------------------------------------------------------------------------------------------------
     -- PART 1 - CONTROL: READS SIX ELEMENTS FROM MEMORY COMPUTING IN PARALLEL
     -------------------------------------------------------------------------------------------------------
-    process(reset, start_line, clock)
+    process(reset, clock)
     begin
-          if reset='1' or start_line='1' then
+          if reset='1' then
              EA_add <= RIDLE;
           elsif rising_edge(clock) then
              EA_add <= PE_add;
@@ -321,9 +321,9 @@ begin
    -- Final output
    pixel <= shift_output;
 
-   process(reset, start_line, clock)
+   process(reset, clock)
    begin
-      if reset='1' or start_line='1' then
+      if reset='1' then
   	cont_iterations <= (others=>'0');
       elsif rising_edge(clock) then
   	if cont_steps > 6 and EA_add = E3 then
@@ -337,6 +337,5 @@ begin
    
    valid <= '1' when EA_add=UPDATEADD and cont_iterations > 0 else 
 	    '0';
-  
 end a1;
 

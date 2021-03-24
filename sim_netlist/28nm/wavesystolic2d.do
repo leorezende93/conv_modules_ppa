@@ -10,23 +10,20 @@ add wave -noupdate -radix decimal /tb/pixel
 add wave -noupdate /tb/start_line
 add wave -noupdate /tb/weight_en
 add wave -noupdate -radix decimal /tb/DUT/address_out
-add wave -noupdate -radix decimal {/tb/DUT/\weight[0][0] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[0][1] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[0][2] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[1][0] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[1][1] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[1][2] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[2][0] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[2][1] }
-add wave -noupdate -radix decimal {/tb/DUT/\weight[2][2] }
 add wave -noupdate -radix decimal /tb/DUT/valid
 add wave -noupdate -radix decimal /tb/DUT/pixel
-add wave -noupdate /tb/DUT/EA_add
-add wave -noupdate /tb/DUT/cont_iterations
-add wave -noupdate /tb/DUT/cont_steps
 add wave -noupdate /tb/DUT/pipe_reset
+add wave -noupdate /tb/DUT/EA_add_0
+add wave -noupdate /tb/DUT/EA_add_1
+add wave -noupdate /tb/DUT/EA_add_2
+add wave -noupdate /tb/DUT/EA_add_reg_0/RN
+add wave -noupdate /tb/DUT/EA_add_reg_0/CP
+add wave -noupdate /tb/DUT/EA_add_reg_0/D
+add wave -noupdate /tb/DUT/EA_add_reg_0/Q
+add wave -noupdate /tb/DUT/EA_add_reg_1/D
+add wave -noupdate /tb/DUT/EA_add_reg_2/D
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {3295166 ps} 0} {{Cursor 2} {11513 ps} 0}
+WaveRestoreCursors {{Cursor 1} {12546 ps} 0} {{Cursor 2} {12624 ps} 0}
 quietly wave cursor active 2
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -42,4 +39,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {25920 ps}
+WaveRestoreZoom {10995 ps} {13080 ps}
