@@ -6,20 +6,22 @@ set_units -capacitance pF -time ns
 create_clock -period 1 -name clock [get_ports clock]
 
 # Create timing constraints for combinational logic
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_0.mac0/op1] -to [get_pins hpin_bus:systolic2d/cols0_0.mac0/res_mac]
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_0.mac0/op2] -to [get_pins hpin_bus:systolic2d/cols0_0.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_0.mac0/op1] -to [get_pins hpin_bus:conv1d/cols0_0.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_0.mac0/op2] -to [get_pins hpin_bus:conv1d/cols0_0.mac0/res_mac]
 
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_1.mac0/op1] -to [get_pins hpin_bus:systolic2d/cols0_1.mac0/res_mac]
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_1.mac0/op2] -to [get_pins hpin_bus:systolic2d/cols0_1.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_1.mac0/op1] -to [get_pins hpin_bus:conv1d/cols0_1.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_1.mac0/op2] -to [get_pins hpin_bus:conv1d/cols0_1.mac0/res_mac]
 
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_2.mac0/op1] -to [get_pins hpin_bus:systolic2d/cols0_2.mac0/res_mac]
-set_multicycle_path 4 -from [get_pins hpin_bus:systolic2d/cols0_2.mac0/op2] -to [get_pins hpin_bus:systolic2d/cols0_2.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_2.mac0/op1] -to [get_pins hpin_bus:conv1d/cols0_2.mac0/res_mac]
+set_multicycle_path 4 -from [get_pins hpin_bus:conv1d/cols0_2.mac0/op2] -to [get_pins hpin_bus:conv1d/cols0_2.mac0/res_mac]
 
 # Input delay           
+set_input_delay -clock clock 0.03 reset        
 set_input_delay -clock clock 0.03 data_from_mem        
 set_input_delay -clock clock 0.03 start_line          
 set_input_delay -clock clock 0.03 weight_en
 set_input_delay -clock clock 0.03 bias_en
+set_input_delay -clock clock 0.03 [get_pins pin:conv1d/reg_weight_en_reg/d]
           
 # Output delay
 set_output_delay -clock clock 0.03 [all_outputs]

@@ -152,7 +152,12 @@ begin
     process (EA_add, start_line, weight_en)
     begin
             case EA_add is
-                when RIDLE   => if (start_line='1' and weight_en = '0') then PE_add<=UPDATEADD ;  else  PE_add <=RIDLE; end if;
+                when RIDLE   => 
+		  if (start_line='1' and weight_en = '0') then 
+		    PE_add<=UPDATEADD;  
+		  else  
+		    PE_add <=RIDLE; 
+		  end if;
 
                 when UPDATEADD =>  PE_add <= E0;     -- read 6 values from the memory **** continously ****
                 when E0        =>  PE_add <= E1;     

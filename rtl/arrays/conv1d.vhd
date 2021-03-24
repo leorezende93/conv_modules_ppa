@@ -280,6 +280,7 @@ begin
    begin
       if (reset = '1') then
 	cont_mac_cycle <= (others=>'0');
+	fim_op <= '0';
       elsif rising_edge(clock) then
 	fim_op <= '0';
 	if endRead_and_startMac = '1' or cont_mac_cycle > 0 then

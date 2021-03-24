@@ -15,11 +15,11 @@ set_db script_search_path "./"
 set_db hdl_search_path "../../../rtl/arrays ../../../rtl/components"
 set_db information_level 9 
 
-#set_db hdl_track_filename_row_col true
-#set_db hdl_array_naming_style %s_%d
-#set_db hdl_instance_array_naming_style %s_%d
-#set_db hdl_generate_index_style %s_%d
-#set_db hdl_bus_wire_naming_style %s_%d
+set_db hdl_track_filename_row_col true
+set_db hdl_array_naming_style %s_%d
+set_db hdl_instance_array_naming_style %s_%d
+set_db hdl_generate_index_style %s_%d
+set_db hdl_bus_wire_naming_style %s_%d
 
 #===============================================================================
 #  Load libraries
